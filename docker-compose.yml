@@ -1,0 +1,49 @@
+version: "3.2"
+services:
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
+    ports:
+      - '33061:3306'
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=dev1
+      - MYSQL_PASSWORD=1234
+      - MYSQL_DATABASE=stgrリファレンス
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']  
+    container_name: ref-mysql-app
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "30003:80"
+    environment:
+      - PMA_HOST=ref-mysql-app
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: ref-phpmyadmin-app
+  app:
+    build: 
+      context: phpapp
+    image: phpapp-ref
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    # volumes:
+    #   - .//app/ :/var/www/app/
+    links:
+      - "mysql:database"
+    ports:
+      - "8101:80"
+    container_name: ref-php-app  
+networks:
+  backend:

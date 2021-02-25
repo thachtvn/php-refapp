@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    /* background: rgb(226, 224, 224); */
+    font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+textarea {
+    resize: none;
+}
+a{
+    color: #537895;;
+}
+.form-control {
+    border: 1px solid #808080;
+}
+.navbar {
+    width: 100%;
+    overflow: auto;
+    border-radius: 0px;
+    display: block;
+    color: #fff;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    padding-left: 100px;
+}
+.navbar a{
+    float: left;
+    text-align: center;
+    padding: 0 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+}
+.btn-primary{
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    border-color: #537895;
+    width: 100px;
+}
+.btn-round {
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+.btn-sm{
+    font-size: 11px;
+}
+.btn-sm label{
+    width: 12px;
+    margin: 0;
+}
+.page-info{
+    font-size: 18px;
+    margin: 20px 350px;
+    max-width: 1200px;
+}
+.container-table{
+    margin: 0px 100px 50px 100px  !important;
+}
+.custom-table{
+    width: 100%;
+    max-width: 100%;
+    margin-left: 50px;
+}
+.table tr th,
+.table tr td{
+    border-right: 2px solid #5C5858;
+}
+.table tr th{
+    border-bottom: 2px solid #5C5858;
+}
+.table tr td{
+    border-bottom: 2px solid #dee2e6;
+    border-style: dotted solid;
+    padding: .4rem;
+}
+.table{
+    margin-bottom: 0;
+    border: 2px solid #5C5858;
+}
+.float-right{
+    float: right;
+}
+.paging-info{
+    border-bottom: 2px solid #5C5858;
+    border-right: 2px solid #5C5858;
+    border-left: 2px solid #5C5858;
+    padding: 10px;
+}
+.checkbox{
+    width: 20px;
+    height: 15px;
+}
